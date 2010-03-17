@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# by Shane Zatezalo Lottadot LLC http://lottadot.com/
+#
+
+echo "Reminder: This exports from master."
+git archive --prefix=project/ master | gzip > project.tar.gz

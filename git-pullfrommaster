@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# by Shane Zatezalo Lottadot LLC http://lottadot.com/
+#
+
+git-pull origin master

@@ -1,0 +1,59 @@
+git-helpers
+=============
+
+This repo contains a few files and scripts to help you use git. It is designed to let you, with one command:
+
+1. Create a git repo of the contents of the local directory *and* have that setup on your remote "origin" server as well with the same branch.
+2. Easily create a local tracking branch to a new remote branch.
+3. Easily export the entire project to a tarball to give to someone (ie client).
+
+I have shared these methods/scripts with enough people that I'm just putting it up publicly.
+
+You should backup your ~/.gitignore file before doing anyting else with this information/scripts in this git repo.
+
+Again, *BACKUP* your gitignore file before going any further.
+
+If you run the ./install.sh it will replace your .gitignore with ours and copy all the git-* shell scripts 
+to your ~/bin directory. (It's assumed you have your local account's PATH environment variable set to 
+use ~/bin as one of it's locations). However, please read this entire document before you run "./install.sh", because 
+there are configurations you can make in the next step and then run the install to make it easer on yourself.
+
+Creating Repo's
+====================================
+
+If you want to be able to create a repo w/ a remote origin repo all in one step with the 
+git-startrepo command, then you will have to do some setup work by hand:
+
+1. edit "creategitrepo.sh" and replace "{username}" with your account's name and "pathtorepos" to the path 
+   where you keep your git repo's.
+2. scp "creategitrepo.sh" to your remote machine's account's "~/bin/" directory
+3. verify that "~/bin/creategitrepo.sh" on your remote machine's account is +x excecutable bit ON. (ie chmod +x)
+4. edit the "git-startrepo" script on your local machine and replace the following with relevant information:
+
+A. {username} 
+B. {hostname}
+C. {pathtogitrepos}
+
+Usage
+====================================
+
+I typically do the following:
+
+1. mkdir ~/projects/foo
+2. create new Xcode project in ~/projects/foo
+3. new terminal window, cd ~/projects/foo
+4. git-startrepo mynewcoolprojectfoo
+5. git-create-branch initialdevelopment
+
+Misc
+====================================
+
+It is assumed that you've already setup your git repo's, exchanged your .ssh keys etc, prior to messing with this.
+
+If you have any suggestions for the gitignore file, or any of this for that matter, please contact me!
+
+Change-log
+==========
+
+Version 0.1 @ 2010-03-17
+- Initial release.

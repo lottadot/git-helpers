@@ -1,0 +1,50 @@
+#OSX
+.DS_Store
+profile
+build/
+build/revision
+Build/
+/build/
+Legacy
+Logging/build
+Logging/Build
+Logging/TemporaryItems
+Logging/*.xcodeproj/*.mode2v3
+Logging/*.xcodeproj/*.pbxuser
+Xcode
+*.tmproj
+!default.pbxuser
+!default.perspectivev3
+!default.mode1v3
+!default.mode2v3
+# Textmate
+*.tm_build_errors
+*~.nib
+*~.xib
+*.pyc
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+pkg
+github-test.rb
+Rakefile.private
+
+#backup files
+*~
+*~.nib
+ 
+#if you use vi/Vim
+*.swp
+.swp
+ 
+#Xcode user-specific files
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.mode1v3
+*.mode2v3
+Local.xcconfig
+ 
+#subversion
+.svn
+*.old
+

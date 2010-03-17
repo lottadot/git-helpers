@@ -1,0 +1,21 @@
+#! /bin/sh
+#
+# by Shane Zatezalo Lottadot LLC http://lottadot.com/
+#
+
+if [ $# -ne 1 ]; then
+         echo 1>&2 Usage: $0 reponame
+         exit 127
+fi
+
+repo_name=$1
+git init
+cat ~/.gitignore >> .git/info/exclude
+git config branch.autosetupmerge true --global
+git add . 
+git commit -m 'initial version'
+git status
+ssh {username}@{hostname} "/home/{username}/bin/creategitrepo.sh $repo_name"
+git remote add origin ssh://{username}@{hostname}/{pathtogitrepos}/$repo_name
+git push origin master
+

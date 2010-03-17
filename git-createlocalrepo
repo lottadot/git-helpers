@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# by Shane Zatezalo Lottadot LLC http://lottadot.com/
+#
+
+git init
+cat ~/.gitignore >> .git/info/exclude
+git config branch.autosetupmerge true --global
+git add . 
+git commit -m 'initial version'
+git status
+
