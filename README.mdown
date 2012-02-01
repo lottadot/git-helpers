@@ -45,6 +45,20 @@ I typically do the following:
 4. git-startrepo mynewcoolprojectfoo
 5. git-create-branch initialdevelopment
 
+Updating many repo's
+====================================
+
+If you are like me, you will clone many github repo's to your local computers. (I typically do this thinking "Oh this looks like an interesting project", I put them all in ~/code and I've got a lot of repo's there that I still have never looked at). 
+
+I want them updated. I don't want to have to cd foo && git fetch && cd .. && cd bar && git fetch.
+
+So there is the git-fetch-dirtree command. It will attempt a git-fetch --all on any git repository found in directories one-level below the current directory path (when the script is run). To use:
+
+1. cd ~/code
+2. git-fetch-dirtree
+
+Note that it only does one level, so as not to update your git-submodules.
+
 Misc
 ====================================
 

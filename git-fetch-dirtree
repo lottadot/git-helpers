@@ -1,0 +1,10 @@
+echo -e "\n\033[1mFetch objects and refs for all repositories...\033[0m\n"
+set +e
+current_dir=$(pwd)
+script_dir=$(dirname $0)
+
+find . -type d -name .git -maxdepth 2 -mindepth 1 \
+  | xargs -n 1 dirname \
+  | sort \
+  | while read line; do echo $line && cd $current_dir/$line && git fetch --all; done
+
